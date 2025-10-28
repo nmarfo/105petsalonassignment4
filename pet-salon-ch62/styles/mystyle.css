@@ -1,0 +1,38 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fdfdfd;
+  color: #333;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: #2a9d8f ;
+}
+
+.hero {
+  background: url("../images/groupofdogs.jpg") center/cover no-repeat;
+  height: 80vh;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+}
+
+.btn-primary {
+  background-color: #2a9d8f;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #21867a;
+}
+
+.table-dark th {
+  background-color: #264653;
+}
+
+footer {
+  background-color: #264653;
+  color: white;
+}
+.is-invalid {
+  border: 2px solid red ;
+}

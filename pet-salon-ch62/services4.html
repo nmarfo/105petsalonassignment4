@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services | Local Storage</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+        crossorigin="anonymous"/>
+
+  <style>
+    body { background: #f7f8fc; }
+    .page-title { letter-spacing: .5px; }
+  </style>
+</head>
+<body class="container py-5">
+
+  <header class="mb-4">
+    <h1 class="page-title display-6 text-primary">Service Manager (Local Storage)</h1>
+    <p class="text-muted mb-0">Save a service, validate inputs, and manage </p>
+  </header>
+
+  <main class="row g-4">
+    <!-- Form Card -->
+    <section class="col-12 col-lg-7">
+      <div class="card shadow-sm">
+        <div class="card-header bg-white">
+          <h2 class="h5 mb-0">Add / Update Service</h2>
+        </div>
+        <div class="card-body">
+          <!-- Use novalidate for custom Bootstrap validation styling -->
+          <form id="serviceForm" class="needs-validation" novalidate>
+            <div class="mb-3">
+              <label for="serviceName" class="form-label">Service Name</label>
+              <input type="text" id="serviceName" class="form-control" placeholder="e.g., Full Grooming" required>
+              <div class="invalid-feedback">Service name is required.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="servicePrice" class="form-label">Price (USD)</label>
+              <input type="number" id="servicePrice" class="form-control" placeholder="e.g., 49.99" min="0.01" step="0.01" required>
+              <div class="invalid-feedback">Enter a valid price greater than 0.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="serviceDuration" class="form-label">Duration (minutes)</label>
+              <input type="number" id="serviceDuration" class="form-control" placeholder="e.g., 60" min="1" step="1" required>
+              <div class="invalid-feedback">Duration must be at least 1 minute.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="serviceDesc" class="form-label">Description</label>
+              <textarea id="serviceDesc" class="form-control" rows="3" placeholder="Short description..." required></textarea>
+              <div class="invalid-feedback">Description is required.</div>
+            </div>
+
+            <div class="d-flex flex-wrap gap-2">
+              <button id="saveBtn"   class="btn btn-primary">Save</button>
+              <button id="getBtn"    class="btn btn-secondary">Get</button>
+              <button id="deleteBtn" class="btn btn-danger">Delete</button>
+              <button id="clearBtn"  class="btn btn-outline-dark" type="button">Clear Inputs</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Result Card -->
+    <section class="col-12 col-lg-5">
+      <div class="card shadow-sm">
+        <div class="card-header bg-white">
+          <h2 class="h5 mb-0">Result</h2>
+        </div>
+        <div class="card-body">
+          <p id="result" class="mb-0 text-muted">No service loaded yet.</p>
+        </div>
+
+    </section>
+  </main>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.js"
+          integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+          crossorigin="anonymous"></script>
+
+  <!-- App Script -->
+  <script src="./scripts/services4.js"></script>
+</body>
+</html>
